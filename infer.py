@@ -29,7 +29,7 @@ model = smp.UnetPlusPlus(
     in_channels=3,
     classes= 3  
 )
-check_point = torch.load('/kaggle/working/model.pth')
+check_point = torch.load('../working/model.pth')
 
 new_state_dict = OrderedDict()
 for k, v in check_point['model'].items():
@@ -42,7 +42,7 @@ model.to(device)
 transform = Compose([Resize((256, 256), interpolation=InterpolationMode.BILINEAR),
                      PILToTensor()])
 
-path = '/kaggle/input/bkai-igh-neopolyp/test/test/'
+path = '../input/bkai-igh-neopolyp/test/test/'
 unet_test_dataset = UNetTestDataClass(path, transform)
 test_dataloader = DataLoader(unet_test_dataset, batch_size=8, shuffle=True)
 

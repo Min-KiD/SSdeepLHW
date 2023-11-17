@@ -8,6 +8,7 @@ Step 2: Download model and libraries
 
 ```python
 !pip install torchgeometry
+!pip install torchsummary
 !pip install segmentation-models-pytorch
 import requests
 import os

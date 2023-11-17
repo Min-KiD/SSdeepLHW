@@ -1,4 +1,3 @@
-from torchsummary import summary
 from torchgeometry.losses import one_hot
 import os
 import pandas as pd
